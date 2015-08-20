@@ -46,3 +46,5 @@ end
 gem 'devise'
 
 gem 'rails_admin'
+
+gem "paperclip", "~> 4.3"

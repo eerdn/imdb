@@ -15,7 +15,8 @@ class CastsController < ApplicationController
     end
 
 	def show
-		
+		@movies_acted = @cast.movies_acted
+		@movies_directed = @cast.movies_directed
 	end
 
 	def update
@@ -45,6 +46,6 @@ class CastsController < ApplicationController
     end
 
     def cast_params
-    	params.require(:cast).permit(:name, :birtday, :bio)
+    	params.require(:cast).permit(:name, :birtday, :bio, :avatar)
 	end	
 end

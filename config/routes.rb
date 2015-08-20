@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
  resources :movies 
  resources :casts
+ resources :users
+ 
 
 
   # The priority is based upon order of creation: first created -> highest priority.

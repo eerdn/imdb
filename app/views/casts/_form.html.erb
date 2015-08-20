@@ -1,4 +1,4 @@
-<%= form_for(@cast) do |f| %>
+<%= form_for(@cast, :html => { :multipart => true}) do |f| %>
   <% if @cast.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@cast.errors.count, "error") %> prohibited this cast from being saved:</h2>
@@ -10,6 +10,10 @@
       </ul>
     </div>
   <% end %>
+
+  <div class="field">    
+    <%= f.file_field :avatar%>
+  </div>
 
   <div class="field">
     <%= f.label :name %><br>
