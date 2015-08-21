@@ -48,3 +48,11 @@ gem 'devise'
 gem 'rails_admin'
 
 gem "paperclip", "~> 4.3"
+
+gem 'friendly_id', '~> 5.1.0'
+
+gem 'kaminari'
+
+gem 'cancancan', '~> 1.10'
+
+gem 'ratyrate'

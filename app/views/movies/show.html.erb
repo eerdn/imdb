@@ -6,6 +6,14 @@ Country: <%= @movie.country %><br/>
 <%= link_to 'Edit', edit_movie_path(@movie)  %>
 <%= link_to 'Back', movies_path %>
 
+<% if can? :update, @movie %>
+  <%= link_to "Edit", edit_movie_path(@movie) %>
+<% end %>
+<br>
+<br>
+Title  : <%= rating_for @movie, "title" %>
+
+
 <h2>Directors</h2>
 <% @directors.each do |director| %>
 	<%= link_to director.name, director %>

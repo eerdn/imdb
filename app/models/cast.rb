@@ -1,4 +1,17 @@
 class Cast < ActiveRecord::Base
+
+ratyrate_rateable "name", "birtday", "bio"
+	paginates_per 3
+
+	 extend FriendlyId
+  friendly_id :name, use: :slugged
+	
+	validates :name, :birtday, :bio, presence: true
+	validates :birtday, format: { with: /\d{2}\/\d{2}\/\d{4}/, on: :create }
+	validates :bio,length: {minimum:30, maximum:1000}
+
+
+
 	has_many :director_movies
 	has_many :actor_movies
 

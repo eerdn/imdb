@@ -1,8 +1,9 @@
 class CastsController < ApplicationController
 	before_action :set_cast, only:[:show, :edit, :update, :destroy]
+	load_and_authorize_resource
 
 	def index
-		@casts = Cast.all		
+		@casts = Cast.all.page params[:page]		
 	end
 
 	def new
@@ -42,7 +43,7 @@ class CastsController < ApplicationController
 	private
 
     def set_cast
-    	@cast = Cast.find(params[:id])
+    	@cast = Cast.friendly.find(params[:id])
     end
 
     def cast_params

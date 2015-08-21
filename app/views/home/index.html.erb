@@ -1,4 +1,5 @@
 <%= link_to 'Login', new_user_session_path %>
+<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
 
 <br>
 
@@ -6,6 +7,3 @@
 	<%= link_to movie.title, movie %>
 	<br>
 <% end %>
-
-
-

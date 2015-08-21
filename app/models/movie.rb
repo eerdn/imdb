@@ -1,5 +1,15 @@
 class Movie < ActiveRecord::Base
 	#has_many :casts
+
+ratyrate_rateable "title", "storyline", "country"
+		paginates_per 3
+
+ extend FriendlyId
+  friendly_id :title, use: :slugged
+
+	validates :title, :storyline, presence:true
+	validates :storyline,length: {minimum: 50}
+
 	has_many :director_movies
 	has_many :actor_movies
 

@@ -6,6 +6,15 @@ Bio: <%= @cast.bio %><br/>
 <%= link_to 'Edit', edit_cast_path(@cast)  %>
 <%= link_to 'Back', casts_path %>
 
+<% if can? :update, @cast %>
+  <%= link_to "Edit", edit_cast_path(@cast) %>
+<% end %>
+
+<br>
+<br>
+Title  : <%= rating_for @cast, "name" %>
+
+
 
 <h2>Movies Acted</h2>
 <% @movies_acted.each do |movie| %>
